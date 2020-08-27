@@ -59103,6 +59103,8 @@ const openIOSARQuickLook = (() => {
     if (document.querySelector('[data-ar="savings"]')) {
     var productSavings = document.querySelector('[data-ar="savings"]').innerHTML;
     var productOriginalPrice = document.querySelector('[data-ar="original-price"]').innerHTML;
+    document.body.appendChild(anchor);
+    anchor.style.display = "none";
     }
     else {
         productSavings = "noCampaign"
@@ -59113,8 +59115,7 @@ const openIOSARQuickLook = (() => {
   else {
        var fragment = "";
   }
-    document.body.appendChild(anchor);
-    anchor.style.display = "none";
+ 
     return (usdzSrc) => {
         anchor.setAttribute('href', usdzSrc+fragment);
         anchor.click();
