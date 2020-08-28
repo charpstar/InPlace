@@ -59095,7 +59095,7 @@ const openIOSARQuickLook = (() => {
     if (document.getElementById("inplace-viewer")) {
     anchor.setAttribute("id", "charpstar");
  //Add domain where you want Add to Cart
-  if ((document.domain == "charpstar.se" || document.domain == "trademax.se" || document.domain == "trademax.fi" || document.domain == "trademax.no" || document.domain == "trademax.dk" || document.domain == "chilli.se" || document.domain == "chilli.no" || document.domain == "furniturebox.se" || document.domain == "furniturebox.no" || document.domain == "www.trademax.se" || document.domain == "www.trademax.no" || document.domain == "www.trademax.dk") && document.querySelector('[data-ar="product-name"]')) {
+  if ((document.domain == "charpstar.se" || document.domain == "trademax.se" || document.domain == "trademax.fi" || document.domain == "trademax.no" || document.domain == "trademax.dk" || document.domain == "chilli.se" || document.domain == "chilli.no" || document.domain == "furniturebox.se" || document.domain == "furniturebox.no") && document.querySelector('[data-ar="product-name"]')) {
     var productTitle =  document.querySelector('[data-ar="product-name"]').innerHTML;
     var productCurrentPrice =  document.querySelector('[data-ar="current-price"]').innerHTML;
     var domainName = document.querySelector('meta[property="og:site_name"]').content; 
