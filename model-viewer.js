@@ -59128,8 +59128,6 @@ const openIOSARQuickLook = (() => {
     };
     }
     else {
-    document.body.appendChild(anchor);
-    anchor.style.display = "none";   
     anchor.setAttribute("id", "charpstarAR");
           return (usdzSrc) => {
         anchor.setAttribute('href', usdzSrc);
