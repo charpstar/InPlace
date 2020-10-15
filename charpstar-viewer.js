@@ -1,3 +1,6 @@
+checkForARSupport();
+checkForiOSSupport();
+
 const openIOSARQuickLook = (() => {
     const anchor = document.createElement('a');
     anchor.setAttribute('rel', 'ar');
@@ -51,5 +54,48 @@ function activateAR(e) {
      openIOSARQuickLook(e.getAttribute("data-iosSrc"));
     }
 }
+
+function checkForiOSSupport() {
+	var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+	// check for AR support
+	const a = document.createElement('a'),
+		  supportsAR = a.relList.supports('ar') ? true : false;
+    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream &&  !supportsAR) {
+          var x = document.getElementsByClassName("charpstarARViewer");
+        var i;
+         for (i = 0; i < x.length; i++) {
+         x[i].style.display = "none";
+  }
+        
+    }
+    
+}
+
+function checkForARSupport() {
+
+ var isMobile = {
+            Android: function () {
+                return navigator.userAgent.match(/Android/i);
+            },
+            iOS: function () {
+                return navigator.userAgent.match(/iPhone/i) ;
+            },
+            iPad: function(){
+                return (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+            },
+            any: function () {
+                return (isMobile.Android() ||  isMobile.iOS() || isMobile.iPad());
+            }
+         
+        };
+if (!isMobile.any()) {
+   var x = document.getElementsByClassName("charpstarARViewer");
+        var i;
+         for (i = 0; i < x.length; i++) {
+         x[i].style.display = "none";
+}
+}
+}
+    
 
  
