@@ -1,3 +1,5 @@
+window.onload = function() {
+    
 checkForARSupport();
 checkForiOSSupport();
 
@@ -96,6 +98,6 @@ if (!isMobile.any()) {
 }
 }
 }
-    
+}
 
  
