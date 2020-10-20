@@ -37,7 +37,7 @@ const openSceneViewer = (() => {
         if (arScale === 'fixed') {
             intentParams += `&resizable=false`;
         }
-         const intent = `intent://arvr.google.com/scene-viewer/1.0${intentParams}#Intent;scheme=${scheme};package=com.google.ar.core;action=android.intent.action.VIEW;S.browser_fallback_url=${encodeURIComponent(locationUrl.toString())};end;`;
+        const intent = `intent://arvr.google.com/scene-viewer/1.0${intentParams}#Intent;scheme=${scheme};package=com.google.android.googlequicksearchbox;action=android.intent.action.VIEW;S.browser_fallback_url=https://developers.google.com/ar;end;`;
         const undoHashChange = () => {
             if (self.location.hash === noArViewerSigil && !fallbackInvoked) {
                 fallbackInvoked = true;
