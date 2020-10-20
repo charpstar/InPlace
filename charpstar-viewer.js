@@ -1,8 +1,10 @@
 window.onload = function() {
     
+if (document.domain != "charpstar.se"){
 checkForARSupport();
 checkForiOSSupport();
-
+}
+    
 const openIOSARQuickLook = (() => {
     const anchor = document.createElement('a');
     anchor.setAttribute('rel', 'ar');
@@ -97,7 +99,14 @@ if (!isMobile.any()) {
          x[i].style.display = "none";
 }
 }
+else {
+      var x = document.getElementsByClassName("charpstarARViewer");
+        var i;
+         for (i = 0; i < x.length; i++) {
+         x[i].style.display = "inline-block";
 }
 }
 
+}
  
+}
