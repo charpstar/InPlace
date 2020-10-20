@@ -5,6 +5,8 @@ checkForARSupport();
 checkForiOSSupport();
 }
     
+}
+
 const openIOSARQuickLook = (() => {
     const anchor = document.createElement('a');
     anchor.setAttribute('rel', 'ar');
@@ -109,4 +111,3 @@ else {
 
 }
  
-}
