@@ -1,5 +1,13 @@
 window.onload = function() {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const ARClass = urlParams.get('ARClass');
+    if (ARClass !== null) {
+        activateAR(document.getElementsByClassName(ARClass)[0]);
+    }
+    
     checkForARSupport();
+    
 }
 const openIOSARQuickLook = (() => {
     const anchor = document.createElement('a');
@@ -110,14 +118,7 @@ function hideARButton() {
 
 
 //QR Code Logic 
-window.onload = function() {
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const ARClass = urlParams.get('ARClass');
-    if (ARClass !== null) {
-        activateAR(document.getElementsByClassName(ARClass)[0]);
-    }
-};
+
 var QRCodeModalActive = false;
 var QRMainSrc = "https://charpstar.se/InPlace-Integration-Full/QRGen.html?charpstar-ar-href=";
 var QRCurrentProductAppend = window.location.href + "?ARClass=charpstarARViewer";
