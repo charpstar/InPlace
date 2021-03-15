@@ -140,8 +140,18 @@ function hideARButton() {
 
 var QRCodeModalActive = false;
 var QRMainSrc = "https://charpstar.se/InPlace-Integration-Full/QRGen.html?charpstar-ar-href=";
+var QRMainSrcSv = "https://charpstar.se/InPlace-Integration-Full/QRGenSv.html?charpstar-ar-href=";
+
 var QRCurrentProductAppend = window.location.href + "?ARClass=charpstarARViewer";
-var fullQRSrc = QRMainSrc + QRCurrentProductAppend;
+
+if (document.documentElement.lang == "sv-SE" || "sv"){
+   var fullQRSrc = QRMainSrcSv + QRCurrentProductAppend; 
+}
+else {
+    var fullQRSrc = QRMainSrc + QRCurrentProductAppend;
+}
+
+
 var QRModalDiv = document.createElement("div");
 QRModalDiv.setAttribute('class', 'QRModal');
 QRModalDiv.style.zIndex = "15";
