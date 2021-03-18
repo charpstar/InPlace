@@ -144,7 +144,7 @@ var QRMainSrcSv = "https://charpstar.se/InPlace-Integration-Full/QRGenSv.html?ch
 
 var QRCurrentProductAppend = window.location.href + "?ARClass=charpstarARViewer";
 
-if (document.documentElement.lang == "sv-SE" || "sv"){
+if (document.documentElement.lang == "sv-SE" || document.documentElement.lang == "sv"){
    var fullQRSrc = QRMainSrcSv + QRCurrentProductAppend; 
 }
 else {
