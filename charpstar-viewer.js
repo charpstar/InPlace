@@ -33,7 +33,7 @@ const openSceneViewer = (() => {
         const modelUrl = new URL(gltfSrc, location);
         const scheme = modelUrl.protocol.replace(':', '');
         locationUrl.hash = noArViewerSigil;
-        let intentParams = `?file=${encodeURIComponent(modelUrl.toString())}&mode=3d_preferred&link=${location}&title=${encodeURIComponent(document.title)}`;
+        let intentParams = `?file=${encodeURIComponent(modelUrl.toString())}&mode=ar_preferred&link=${location}&title=${encodeURIComponent(document.title)}`;
         if (arScale === 'fixed') {
             intentParams += `&resizable=false`;
         }
