@@ -28,16 +28,24 @@ const openSceneViewer = (() => {
         if (fallbackInvoked) {
             return;
         }
+
+        
         const location = self.location.toString();
         const locationUrl = new URL(location);
         const modelUrl = new URL(gltfSrc, location);
         const scheme = modelUrl.protocol.replace(':', '');
         locationUrl.hash = noArViewerSigil;
         let intentParams = `?file=${encodeURIComponent(modelUrl.toString())}&mode=ar_preferred&link=${location}&title=${encodeURIComponent(document.title)}`;
-        if (arScale === 'fixed') {
-            intentParams += `&resizable=false`;
-        }
-         const intent = `intent://arvr.google.com/scene-viewer/1.0${intentParams}#Intent;scheme=${scheme};package=com.google.android.googlequicksearchbox;action=android.intent.action.VIEW;S.browser_fallback_url=${encodeURIComponent(locationUrl.toString())};end;`;
+        intentParams += `&resizable=false`;
+        intentParams += `&disable_occlusion=true`;
+        var x = document.getElementsByClassName("charpstarARViewer");
+         for (var i = 0; i < x.length; i++) {
+          if (x[i].hasAttribute("data-wallPlace")) {
+               intentParams += `&enable_vertical_placement=true`;
+          }}
+          
+          
+        const intent = `intent://arvr.google.com/scene-viewer/1.0?${intentParams.toString() + '&file=' +encodeURIComponent(modelUrl.toString())}#Intent;scheme=https;package=com.google.android.googlequicksearchbox;action=android.intent.action.VIEW;S.browser_fallback_url=${encodeURIComponent(locationUrl.toString())};end;`;
         const undoHashChange = () => {
             if (self.location.hash === noArViewerSigil && !fallbackInvoked) {
                 fallbackInvoked = true;
