@@ -1,1 +1,3 @@
-function arSupportCheck(){}
+function arSupportCheck() {
+    return true;
+}
