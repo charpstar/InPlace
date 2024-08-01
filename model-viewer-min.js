@@ -30733,12 +30733,8 @@ const ROTATION_SPEED = Math.PI / 32
     }
 }
 ;
-window.addEventListener("message", function(e) {
-    "_apple_ar_quicklook_button_tapped" == e.data && ("trademax.se" != document.domain && "charpstar.se" != document.domain && "trademax.fi" != document.domain && "trademax.no" != document.domain && "trademax.dk" != document.domain && "chilli.se" != document.domain && "chilli.no" != document.domain && "furniturebox.se" != document.domain && "furniturebox.no" != document.domain && "www.trademax.se" != document.domain && "www.trademax.fi" != document.domain && "www.trademax.no" != document.domain && "www.trademax.dk" != document.domain && "www.chilli.se" != document.domain && "www.chilli.no" != document.domain && "www.furniturebox.se" != document.domain && "www.furniturebox.no" != document.domain || document.querySelector('[data-ar="add-to-cart"]').click())
-}, !0);
 // Define the extended ModelViewerElement only if the hostname is not part of the restricted domains
-if (!['soffadirekt.se', 'soffadirekt.no'].includes(window.location.hostname)) {
+
     const ModelViewerElement = SceneGraphMixin(MagicLeapMixin(AnnotationMixin(StagingMixin(EnvironmentMixin(ControlsMixin(ARMixin(LoadingMixin(AnimationMixin(FocusVisiblePolyfillMixin(ModelViewerElementBase))))))))));
     customElements.define("model-viewer", ModelViewerElement);
     export { ModelViewerElement };
-}
